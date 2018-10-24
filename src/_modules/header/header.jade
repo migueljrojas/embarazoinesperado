@@ -1,2 +1,22 @@
 header.header
-    
+    .header__main__container
+        .header__logo
+            
+        ul.header__social
+            li.header__social__item
+                a
+                    i.fa.fa-facebook
+            li.header__social__item
+                a
+                    i.fa.fa-twitter
+        .header__hamburguer
+            span
+            span
+            span
+        
+    .header__nav
+        nav.header__nav__container
+            ul.header__menu
+                each item in site.data.header
+                    li
+                        a(href=item.url)=item.name

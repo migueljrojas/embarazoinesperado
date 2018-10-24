@@ -1,6 +1,105 @@
 .header {
-
     $h: &;
+    overflow: hidden;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    @include mq(sm) {
+        position: absolute;
+        width: 32.5%;
+        right: 0;
+        top: 0;
+        bottom: auto;
+        left: auto;
+        height: 45vw;
+    }
+
+    // todos los estilos de posicionamiento y estructura van aca
+    &__main {
+
+        &__container {
+            background: $black;
+            height: 22vw;
+
+            @include mq(sm) {
+                height: 6.5vw;
+
+            }
+        }
+    }
+
+    &__logo {
+
+    }
+
+    &__social {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 4.5vh;
+
+        i {
+            padding: 0 15px;
+            color: $white;
+        }
+
+        @include mq(sm) {
+
+        }
+    }
+
+    &__nav {
+        @include trans;
+        transform: translateX(100%);
+        display: flex;
+        background: $black;
+        height: 78vw;
+
+        @include mq(sm) {
+            height: 38.5vw;
+            overflow: hidden;
+        }
+
+
+        &__container {
+            display: flex;
+            position: absolute;
+            right: 35px;
+            padding-top: 10%;
+            text-align: right;
+
+            @include mq(sm) {
+            }
+        }
+    }
+
+    &__menu {
+
+        a {
+            color: $white;
+            text-transform: uppercase;
+            font-family: $titleFont;
+            font-weight: 700;
+        }
+
+        li {
+
+            font-size: 14px;
+            padding-bottom: 5px;
+
+            @include mq(sm) {
+                font-size: 16px;
+                padding-bottom: 15px;
+            }
+        }
+
+
+    }
 
     &__hamburguer {
         cursor: pointer;
@@ -9,10 +108,16 @@
         margin: auto;
         position: absolute;
         right: 32px;
-        top: 30px;
+        z-index: 1000;
+        top: 28px;
+
+        @include mq(sm) {
+            top: 30px;
+
+        }
 
         span {
-            background-color: $mainColor;
+            background-color: $white;
             border-radius: 2px;
             content: '';
             display: block;
@@ -49,7 +154,7 @@
         }
 
         #{$h}__nav {
-
+            transform: translateX(0);
         }
     }
 }
@@ -87,3 +192,4 @@
 50%{transform: translateY(-9px) rotate(0deg);}
 100%{transform: translateY(-9px) rotate(135deg);}
 }
+// body Animations
