@@ -1,5 +1,6 @@
 .footer {
     @include padd(both, half);
+
     text-align: center;
     background: $black;
     color: $white;
@@ -8,6 +9,7 @@
         margin: 0;
         font-family: $titleFont;
         font-size: 10px;
+
         @include mq(sm) {
             font-size: 14px;
         }

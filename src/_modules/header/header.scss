@@ -1,7 +1,5 @@
 .header {
     $h: &;
-    overflow: hidden;
-    height: 100vw;
     position: fixed;
     top: 0;
     right: 0;
@@ -11,7 +9,7 @@
 
     @include mq(sm) {
         position: absolute;
-        width: 32.5%;
+        width: 33.333333%;
         right: 0;
         top: 0;
         bottom: auto;
@@ -19,17 +17,12 @@
         height: 45vw;
     }
 
-    // todos los estilos de posicionamiento y estructura van aca
-    &__main {
+    &__main-container {
+        background: $black;
+        height: 22vw;
 
-        &__container {
-            background: $black;
-            height: 22vw;
-
-            @include mq(sm) {
-                height: 6.5vw;
-
-            }
+        @include mq(sm) {
+            height: 6.5vw;
         }
     }
 
@@ -47,17 +40,12 @@
             padding: 0 15px;
             color: $white;
         }
-
-        @include mq(sm) {
-
-        }
     }
 
     &__nav {
-        @include trans;
-        transform: translateX(100%);
         display: flex;
-        background: $black;
+        justify-content: stretch;
+        align-items: stretch;
         height: 78vw;
 
         @include mq(sm) {
@@ -65,40 +53,38 @@
             overflow: hidden;
         }
 
-
         &__container {
+            @include trans;
+            transform: translateX(100%);
             display: flex;
-            position: absolute;
-            right: 35px;
-            padding-top: 10%;
+            justify-content: flex-end;
+            align-items: center;
             text-align: right;
+            background: $black;
+            width: 100%;
+        }
 
-            @include mq(sm) {
+        &__menu {
+            padding-right: 35px;
+
+            a {
+                color: $white;
+                text-transform: uppercase;
+                font-family: $titleFont;
+                font-weight: 700;
+            }
+
+            li {
+
+                font-size: 14px;
+                padding-bottom: 5px;
+
+                @include mq(sm) {
+                    font-size: 16px;
+                    padding-bottom: 15px;
+                }
             }
         }
-    }
-
-    &__menu {
-
-        a {
-            color: $white;
-            text-transform: uppercase;
-            font-family: $titleFont;
-            font-weight: 700;
-        }
-
-        li {
-
-            font-size: 14px;
-            padding-bottom: 5px;
-
-            @include mq(sm) {
-                font-size: 16px;
-                padding-bottom: 15px;
-            }
-        }
-
-
     }
 
     &__hamburguer {
@@ -113,7 +99,6 @@
 
         @include mq(sm) {
             top: 30px;
-
         }
 
         span {
@@ -153,7 +138,7 @@
             }
         }
 
-        #{$h}__nav {
+        #{$h}__nav__container {
             transform: translateX(0);
         }
     }

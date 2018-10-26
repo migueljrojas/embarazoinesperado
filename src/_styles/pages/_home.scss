@@ -1,27 +1,23 @@
 .home {
-
+    margin: 0;
+    padding: 0;
     &__hero {
         @include trans();
+
         padding-top: 22vw;
 
         @include mq(sm) {
+            height: 45vw;
             position: relative;
             padding-top:0;
 
             &.-open {
-                transform: translateX(-32.5%);
-            }
-        }
-
-        &__col {
-
-            @include mq(sm) {
-                height: 45vw;
+                transform: translateX(-33.3%);
             }
         }
 
         &__image {
-            @include img($ratio: 120%, $imgheight: 100%, $imgwidth: 100%);
+            @include img($ratio: 120%, $imgheight: 100%, $imgwidth: auto);
 
             @include mq(sm) {
                 position: absolute;
@@ -32,12 +28,10 @@
                 bottom: 0;
                 padding-bottom: 0;
                 height: auto;
-
             }
         }
 
-        &__body {
-
+        &__content {
             @include mq(sm) {
                 position: absolute;
                 right: 0;
@@ -46,31 +40,27 @@
                 flex-direction: column;
                 justify-content: flex-end;
                 align-items: flex-end;
-                width: 32.5%;
+                width: 33.33333333%;
             }
         }
 
         &__contact {
-            background: transparentize($pink, .5);
+            background: $pink;
             padding: 20px;
             font-family: $titleFont;
             color: $white;
             padding: 20px 20px 10px 20px;
-            position: absolute;
-            top: 48%;
             width: 100%;
 
             @include mq(sm) {
+                background: transparentize($pink, .6);
                 position: relative;
-                top: 0;
-                width: auto;
             }
 
             &__text {
                 font-weight: 700;
                 text-align: center;
                 padding-bottom: 15px;
-
 
                 h2 {
                     margin: 0;
@@ -96,7 +86,6 @@
 
                 @include mq(sm) {
                     font-size: 4vw;
-
                 }
             }
 
@@ -111,7 +100,6 @@
 
                     @include mq(sm) {
                         font-size: 1.25vw;
-
                     }
 
                     strong {
@@ -141,30 +129,45 @@
             @include img($imgwidth: auto, $imgheight: 100%);
 
             @include mq(sm) {
-                width: 36.5vh;
-                height: 35vh;
+                width: 50%;
                 position: relative;
                 overflow: hidden;
             }
         }
     }
 
-    &__body {
-
+    &__who-we-are {
         @include mq(sm) {
-            height: 80vh;
+            display: flex;
         }
 
         &__col {
+            display: flex;
+            overflow: hidden;
+
+
             @include mq(sm) {
+                width: 33.33333333%;
+                height: 33.3vw;
+            }
+
+            &--internal {
+                width: 50%;
                 display: flex;
                 flex-direction: column;
-                justify-content: stretch;
-                overflow: hidden;
+
+            }
+
+            &--resize {
+                height: 100vw;
+
+                @include mq(sm) {
+                    height: auto;
+                }
             }
         }
 
-        &__who-we-are {
+        &__about {
             @include padd(both,half);
             background: $black;
             padding-left: 20px;
@@ -172,6 +175,7 @@
             flex-grow: 2;
 
             @include mq(sm) {
+                height: 100%;
                 padding: 40px;
             }
 
@@ -196,13 +200,10 @@
             background-size: cover;
             padding-left: 20px;
             padding-right: 20px;
-            flex-grow: 2;
-            height: 60vh;
 
             @include mq(sm) {
                 padding: 40px;
-                flex-grow: 2;
-                height: auto;
+                height: 100%;
             }
 
             &__title {
@@ -212,7 +213,6 @@
 
                 @include mq(sm) {
                     font-size: 32px;
-
                 }
             }
 
@@ -224,50 +224,64 @@
         }
 
         &__wrapper {
-            height: 20vh;
-            flex-grow: 2;
             position: relative;
-            padding: 10px;
+            flex-basis: 50%;
+            position: relative;
 
-            @include mq(sm) {
-                height: 40vh;
-                padding: 15px;
+            &--arrowdown {
+                @include arrow(down, $white);
+            }
+
+            &--arrowup {
+                @include arrow(down, $white);
+            }
+
+            &__data {
+                padding: 10px;
+
+                @include mq(sm) {
+                    padding: 15px;
+                }
             }
 
             &__title {
                 @include title($color: $pink);
-                font-size: 10px;
+
+                font-size: 14px;
                 margin: 0;
                 font-weight: 700;
 
                 @include mq(sm) {
                     font-size: 18px;
                     margin: 0;
-
                 }
             }
 
             &__text {
-                font-size: 10px;
+                font-size: 14px;
                 padding-top: 10px;
+                padding-bottom: 10px;
+                margin: 0;
 
                 @include mq(sm) {
                     font-size: 16px;
-
                 }
             }
 
             &__image {
-
-                @include img($imgheight: 100%, $imgwidth: auto);
                 position: absolute;
                 top: 0;
-                left: 0;
-                right: 0;
                 bottom: 0;
-                padding-bottom: 0;
-                height: auto;
-                display: block;
+                right: 0;
+                left: 0;
+                background: url('https://picsum.photos/1380/700');
+                background-size: cover;
+                background-color: transparentize($pink, .2);
+                background-blend-mode: multiply;
+
+                @include mq(sm) {
+
+                }
             }
         }
     }
@@ -275,124 +289,124 @@
     &__contacto {
         font-family: $titleFont;
 
-        &__image {
-            min-height: 100vw;
-            @include mq(sm) {
-                min-height: 0;
-            }
+        @include mq(sm) {
+            display: flex;
+        }
 
-            &__container {
-                    @include img($imgheight: 100%, $imgwidth: auto);
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    padding-bottom: 0;
-                    height: auto;
+        &__image {
+            @include img($imgheight:100%, $imgwidth: auto);
+
+            @include mq(sm) {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding-bottom: 0;
+                height: auto;
+                width: 33.3%;
             }
         }
 
-        &__data {
-            @include padd(top,half);
-            display: flex;
-            justify-content: center;
+        &__content {
+            @include padd(both, half);
 
+            padding-left: 20px;
+            padding-right: 20px;
+            background: $pink;
 
             @include mq(sm) {
-                @include padd(top);
+                display: flex;
+                width: 66.666666%;
+            }
+
+            &__col {
+                @include padd(both, half);
+
+                @include mq(sm) {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    width: 50%;
+                }
+            }
+
+            &__data {
+                margin: 0;
+                display: flex;
+
+                @include mq(sm) {
+                    justify-content: center;
+                    padding-left: 80px;
+                }
             }
 
             &__title {
                 @include title($background: $white);
+
                 font-weight: 700;
                 font-size: 36px;
+                margin: 0;
 
                 @include mq(sm) {
                     font-size: 42px;
-                    left: 40px;
                 }
             }
 
-
-            &--layout {
-                background: $pink;
-
-                @include mq(sm) {
-                    display: flex;
-                    flex-direction: row;
-                }
-            }
-        }
-
-        &__number {
-            display: flex;
-            justify-content: center;
-
-            @include mq(sm) {
-        }
-
-            ul {
+            &__number {
                 display: flex;
-
-            }
-
-            i {
-                color: $black;
-                font-weight: 700;
-                font-size: 28px;
+                padding-top: 10px;
 
                 @include mq(sm) {
-                    font-size: 28px;
+                    justify-content: center;
+                    padding-top: 0;
                 }
-            }
 
-            &__text {
-                color:$white;
-                font-weight: 700;
-                padding-left: 10px;
-                margin:0;
-                font-size: 24px;
+                ul {
+                    display: flex;
+                    align-self: center;
+                }
 
-                @include mq(sm) {
+                i {
+                    color: $black;
+                    font-weight: 700;
+                    font-size: 24px;
 
+                    @include mq(sm) {
+                        font-size: 28px;
+                    }
+                }
+
+                &__text {
+                    color:$white;
+                    font-weight: 700;
+                    padding-left: 10px;
+                    margin:0;
+                    font-size: 24px;
                 }
             }
         }
 
         &__form {
-            @include padd(top,half);
-
             @include mq(sm) {
-                @include padd();
-                padding-left: 20px;
-                padding-right: 80px;
-            }
-
-            &__col {
-                padding-left: 20px;
-                padding-right: 20px;
-
-                @include mq(sm) {
-                    display:block;
-                    width: 50%;
-                    padding-bottom: 50px;
-                }
+                padding-left: 40px;
+                padding-right: 0;
+                width: 75%;
             }
 
             &__title {
                 border-top: 3px solid;
-                @include padd();
                 font-size: 24px;
                 color: $white;
                 text-transform: uppercase;
+                margin: 0;
+                padding: 40px 0 20px 0;
+                text-align: center;
+                font-weight: 700;
 
                 @include mq(sm) {
-                    font-size: 22px;
+                    padding: 10px 0 20px 0;
+                    font-size: 20px;
                     border-top: none;
                 }
-
             }
 
             &__input {
@@ -409,6 +423,7 @@
 
                 &::placeholder {
                     color: $white;
+                    font-size: 16px;
                 }
             }
 
@@ -420,11 +435,8 @@
                 border: none;
                 padding: 5px 40px;
                 float: right;
-                margin-bottom: 60px;
-
-                @include mq(sm) {
-                    margin-bottom: 20px;
-                }
+                width: 50%;
+                font-size: 12px;
             }
         }
     }

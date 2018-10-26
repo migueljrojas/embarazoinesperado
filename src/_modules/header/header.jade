@@ -1,5 +1,5 @@
 header.header
-    .header__main__container
+    .header__main-container
         .header__logo
             
         ul.header__social
@@ -14,9 +14,9 @@ header.header
             span
             span
         
-    .header__nav
-        nav.header__nav__container
-            ul.header__menu
+    nav.header__nav
+        .header__nav__container
+            ul.header__nav__menu
                 each item in site.data.header
                     li
                         a(href=item.url)=item.name
