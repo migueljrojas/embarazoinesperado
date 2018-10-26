@@ -29,9 +29,122 @@
           </g>
       </symbol>
   </svg>
-  <header class="header"></header>
-  <main class="home"></main>
-  <footer class="footer"></footer>
+  <header class="header">
+    <div class="header__main-container">
+      <div class="header__logo"></div>
+      <ul class="header__social">
+        <li class="header__social__item"><a><i class="fa fa-facebook"></i></a></li>
+        <li class="header__social__item"><a><i class="fa fa-twitter"></i></a></li>
+      </ul>
+      <div class="header__hamburguer"><span></span><span></span><span></span></div>
+    </div>
+    <nav class="header__nav">
+      <div class="header__nav__container">
+        <ul class="header__nav__menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="">quienes somos</a></li>
+          <li><a href="">asesoramiento profesional</a></li>
+          <li><a href="">consulta gratuita</a></li>
+          <li><a href="">preguntas frecuentes</a></li>
+          <li><a href="">novedades</a></li>
+          <li><a href="">red nacional de centros</a></li>
+          <li><a href="">contacto y ubicacion</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="home">
+    <section class="home__hero js-hero">
+      <div class="home__hero__image"><img src="https://picsum.photos/1680/700"></div>
+      <div class="home__hero__content">
+        <div class="home__hero__contact">
+          <div class="home__hero__contact__text"> 
+            <h2>podemos ayudarte</h2>
+          </div>
+          <div class="home__hero__contact__container">
+            <div class="home__hero__contact__icon"><i class="fa fa-whatsapp"></i></div>
+            <div class="home__hero__contact__info">
+              <p class="home__hero__contact__info__text">contactanos<strong>consulta gratuita</strong></p>
+              <p class="home__hero__contact__info__number">
+                 
+                +54911<strong> 5802 1696</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="home__hero__video"><img src="https://picsum.photos/1280/700"></div>
+      </div>
+    </section>
+    <section class="home__who-we-are">
+      <div class="home__who-we-are__col">
+        <div class="home__who-we-are__about">
+          <h2 class="home__who-we-are__about__title">Somos</h2>
+          <p class="home__who-we-are__about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+      <div class="home__who-we-are__col">
+        <div class="home__who-we-are__article">
+          <h2 class="home__who-we-are__article__title">No te desesperes</h2>
+          <p class="home__who-we-are__article__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt</p>
+        </div>
+      </div>
+      <div class="home__who-we-are__col home__who-we-are__col--resize">
+        <div class="home__who-we-are__col--internal">
+          <div class="home__who-we-are__wrapper home__who-we-are__wrapper--arrowdown">
+            <div class="home__who-we-are__wrapper__data">
+              <h2 class="home__who-we-are__wrapper__title">Consulta gratuita</h2>
+              <p class="home__who-we-are__wrapper__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="home__who-we-are__wrapper">
+            <div class="home__who-we-are__wrapper__image"></div>
+          </div>
+        </div>
+        <div class="home__who-we-are__col--internal">
+          <div class="home__who-we-are__wrapper">
+            <div class="home__who-we-are__wrapper__image"></div>
+          </div>
+          <div class="home__who-we-are__wrapper">
+            <div class="home__who-we-are__wrapper__data home__who-we-are__wrapper--arrowup">
+              <h2 class="home__who-we-are__wrapper__title">Asesoramiento Profesional</h2>
+              <p class="home__who-we-are__wrapper__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="home__contacto">
+      <div class="home__contacto__image"><img src="https://picsum.photos/1280/700"></div>
+      <div class="home__contacto__content">
+        <div class="home__contacto__content__col">
+          <div class="home__contacto__content__data">
+            <h2 class="home__contacto__content__title">Contacto</h2>
+          </div>
+          <div class="home__contacto__content__number">
+            <ul>
+              <li><i class="fa fa-whatsapp"></i></li>
+            </ul>
+            <p class="home__contacto__content__number__text">+54911 5802 1696</p>
+          </div>
+        </div>
+        <div class="home__contacto__content__col">
+          <div class="home__contacto__form">
+            <h2 class="home__contacto__form__title">hacenos tu consulta</h2>
+            <form class="home__contacto__form__body">
+              <input placeholder="Nombre y apellido" type="text" class="home__contacto__form__input">
+              <input placeholder="Email" type="email" class="home__contacto__form__input">
+              <input placeholder="Telefono" type="phone" class="home__contacto__form__input">
+              <input placeholder="Mensaje" class="home__contacto__form__input">
+              <button class="home__contacto__form__button">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Embarazo no deseado &copy 2018, Todos los derechas reservados</p>
+  </footer>
   <script src="./scripts/main.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
   <script>new WOW().init();</script>

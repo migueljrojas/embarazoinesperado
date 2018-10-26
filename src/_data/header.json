@@ -1,6 +1,34 @@
 [
     {
-        "name":"",
+        "name":"Home",
+        "url":"/"
+    },
+    {
+        "name":"quienes somos",
+        "url":""
+    },
+    {
+        "name":"asesoramiento profesional",
+        "url":""
+    },
+    {
+        "name":"consulta gratuita",
+        "url":""
+    },
+    {
+        "name":"preguntas frecuentes",
+        "url":""
+    },
+    {
+        "name":"novedades",
+        "url":""
+    },
+    {
+        "name":"red nacional de centros",
+        "url":""
+    },
+    {
+        "name":"contacto y ubicacion",
         "url":""
     }
 ]

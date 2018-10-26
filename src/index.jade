@@ -1,4 +1,75 @@
 extends _layouts/base
 
+include ./_modules/slider/slider
+
 block content
     main.home
+        section.home__hero.js-hero
+            .home__hero__image
+                img(src='https://picsum.photos/1680/700')
+            .home__hero__content
+                .home__hero__contact
+                    .home__hero__contact__text 
+                        h2 podemos ayudarte
+
+                    .home__hero__contact__container
+                        .home__hero__contact__icon
+                            i.fa.fa-whatsapp
+                        .home__hero__contact__info
+                            p.home__hero__contact__info__text
+                                | contactanos
+                                strong consulta gratuita
+                            p.home__hero__contact__info__number 
+                                | +54911
+                                strong  5802 1696
+                .home__hero__video
+                    img(src='https://picsum.photos/1280/700')
+                                
+
+        section.home__who-we-are
+            .home__who-we-are__col
+                .home__who-we-are__about
+                    h2.home__who-we-are__about__title Somos
+                    p.home__who-we-are__about__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            .home__who-we-are__col
+                .home__who-we-are__article
+                    h2.home__who-we-are__article__title No te desesperes
+                    p.home__who-we-are__article__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt
+            
+            .home__who-we-are__col.home__who-we-are__col--resize
+                .home__who-we-are__col--internal
+                    .home__who-we-are__wrapper.home__who-we-are__wrapper--arrowdown
+                        .home__who-we-are__wrapper__data
+                            h2.home__who-we-are__wrapper__title Consulta gratuita
+                            p.home__who-we-are__wrapper__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua.
+                    .home__who-we-are__wrapper
+                        .home__who-we-are__wrapper__image
+                .home__who-we-are__col--internal
+                    .home__who-we-are__wrapper
+                        .home__who-we-are__wrapper__image
+                    .home__who-we-are__wrapper
+                        .home__who-we-are__wrapper__data.home__who-we-are__wrapper--arrowup
+                            h2.home__who-we-are__wrapper__title Asesoramiento Profesional
+                            p.home__who-we-are__wrapper__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua.
+
+        section.home__contacto
+            .home__contacto__image
+                img(src='https://picsum.photos/1280/700')
+            .home__contacto__content
+                .home__contacto__content__col
+                    .home__contacto__content__data
+                        h2.home__contacto__content__title Contacto
+                    .home__contacto__content__number
+                        ul
+                            li
+                                i.fa.fa-whatsapp
+                        p.home__contacto__content__number__text +54911 5802 1696
+                .home__contacto__content__col
+                    .home__contacto__form
+                        h2.home__contacto__form__title hacenos tu consulta
+                        form.home__contacto__form__body
+                            input.home__contacto__form__input(placeholder='Nombre y apellido', type='text')
+                            input.home__contacto__form__input(placeholder='Email', type='email')
+                            input.home__contacto__form__input(placeholder='Telefono', type='phone')
+                            input.home__contacto__form__input(placeholder='Mensaje')
+                            button.home__contacto__form__button Enviar
