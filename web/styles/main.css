@@ -16122,29 +16122,14 @@ button._button {
   border: 10px solid #fff;
   height: 0;
   width: 0;
+  position: absolute;
+  z-index: 5;
   border-left-color: transparent;
   border-right-color: transparent;
   border-bottom-color: transparent;
-  position: absolute;
   top: 100%;
   left: -webkit-calc(50% - 10px);
   left: calc(50% - 10px);
-  z-index: 1000;
-}
-
-.home__who-we-are__wrapper--arrowdown:before {
-  content: "";
-  border: 10px solid #fff;
-  height: 0;
-  width: 0;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-top-color: transparent;
-  position: absolute;
-  bottom: 100%;
-  left: -webkit-calc(50% - 10px);
-  left: calc(50% - 10px);
-  z-index: 1000;
 }
 
 .home__who-we-are__wrapper--arrowup:after {
@@ -16152,29 +16137,14 @@ button._button {
   border: 10px solid #fff;
   height: 0;
   width: 0;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
   position: absolute;
-  top: 100%;
-  left: -webkit-calc(50% - 10px);
-  left: calc(50% - 10px);
-  z-index: 1000;
-}
-
-.home__who-we-are__wrapper--arrowup:before {
-  content: "";
-  border: 10px solid #fff;
-  height: 0;
-  width: 0;
+  z-index: 5;
   border-left-color: transparent;
   border-right-color: transparent;
   border-top-color: transparent;
-  position: absolute;
   bottom: 100%;
   left: -webkit-calc(50% - 10px);
   left: calc(50% - 10px);
-  z-index: 1000;
 }
 
 .home__who-we-are__wrapper__data {

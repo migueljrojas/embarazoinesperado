@@ -189,36 +189,44 @@
 }
 
 @mixin arrow($pointTo, $color: inherit) {
-    @if $pointTo == down {
-        &:after {
-            content: "";
-            border: 10px solid $color;
-            height: 0;
-            width: 0;
+    &:after {
+        content: "";
+        border: 10px solid $color;
+        height: 0;
+        width: 0;
+        position: absolute;
+        z-index: 5;
+
+        @if $pointTo == down {
             border-left-color: transparent;
             border-right-color: transparent;
             border-bottom-color: transparent;
-            position: absolute;
             top: 100%;
             left: calc(50% - 10px);
-            z-index: 1000;
-
         }
-    }
 
-    @if $pointTo == down {
-        &:before {
-            content: "";
-            border: 10px solid $color;
-            height: 0;
-            width: 0;
+        @if $pointTo == up {
             border-left-color: transparent;
             border-right-color: transparent;
             border-top-color: transparent;
-            position: absolute;
             bottom: 100%;
             left: calc(50% - 10px);
-            z-index: 1000;
+        }
+
+        @if $pointTo == left {
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+            right: 100%;
+            top: calc(50% - 10px);
+        }
+
+        @if $pointTo == right {
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+            left: 100%;
+            top: calc(50% - 10px);
         }
     }
 }

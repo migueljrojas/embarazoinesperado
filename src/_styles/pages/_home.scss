@@ -233,7 +233,7 @@
             }
 
             &--arrowup {
-                @include arrow(down, $white);
+                @include arrow(up, $white);
             }
 
             &__data {
