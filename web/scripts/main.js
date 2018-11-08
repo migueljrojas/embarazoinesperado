@@ -14662,34 +14662,156 @@ return jQuery;
 'use strict';
 
 // Constructor
+var Centros = function() {
+    var boton = $('.centros__content__button');
+    var container = $('.centros__content__centro-container');
+    var seleccion = $('.centros__content__centro-data');
+    var body = $('body');
+
+    boton.on("click", function() {
+        seleccion.removeClass('-show');
+        boton.addClass('centros__content__button--open')
+        container.addClass('centros__content__centro-container--open');
+        seleccion.addClass('centros__content__centro-data--open');
+        body.addClass('-hideOverflow');
+    });
+
+    seleccion.on("click", function(event) {
+        seleccion.removeClass('-show');
+        boton.removeClass('centros__content__button--open')
+        container.removeClass('centros__content__centro-container--open');
+        seleccion.removeClass('centros__content__centro-data--open');
+        body.removeClass('-hideOverflow');
+        $(this).addClass('-show');
+    });
+};
+
+module.exports = Centros;
+
+},{}],6:[function(require,module,exports){
+'use strict';
+
+// Constructor
+var Faq = function() {
+    var question = $('.preguntas-frecuentes__content__questions__faq');
+
+    question.on("click", function(event) {
+        if($(event.target).hasClass('preguntas-frecuentes__content__questions__faq__answer') ||
+        $(event.target).hasClass('preguntas-frecuentes__content__questions__faq__answer__text')) {
+            return false;
+        }
+
+        if($(this).hasClass('-open')) {
+            question.removeClass('-open');
+        } else {
+            question.removeClass('-open');
+            $(this).toggleClass("-open");
+        }
+    });
+};
+
+module.exports = Faq;
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+// Constructor
 var Header = function() {
     var header = $('.header');
-    var home = $('home');
+    var body = $('body');
+    var title = $('.js-title')
     var hero = $('.js-hero');
     var menuOpen = $('.header__hamburguer');
 
     menuOpen.on('click', function(){
         header.toggleClass('-open');
         hero.toggleClass('-open');
-        home.toggleClass('-hideOverflow');
+        title.toggleClass('-open');
+        body.toggleClass('-hideOverflow');
     });
+
+    $('a[href="#"]').click(function(e){
+    e.preventDefault();
+});
+
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top + -80
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+        });
+      }
+    }
+  });
 };
 
 module.exports = Header;
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 // Constructor
 var Slider = function() {
     var slider = $('._slider');
+    var sliderMulti = $('._slidermulti');
     if (slider) {
         slider.each(function(){
             $(this).slick({
                 dots: true,
                 fade: true,
-                arrows:  false,
+                arrows: true,
+                swipeToSlide: true,
                 autoplay: true
+            });
+        });
+    }
+    if (sliderMulti) {
+        sliderMulti.each(function(){
+            $(this).slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                responsive: [
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
             });
         });
     }
@@ -14697,7 +14819,7 @@ var Slider = function() {
 
 module.exports = Slider;
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 // Main javascript entry point
 // Should handle bootstrapping/starting application
@@ -14708,6 +14830,8 @@ global.$ = global.jQuery = require('jquery');
 global._ = require('underscore');
 var Header = require('../_modules/header/header');
 var Slider = require('../_modules/slider/slider');
+var Faq = require('../_modules/faq/faq');
+var Centros = require('../_modules/centros/centros');
 
 $(function() {
     require('../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min');
@@ -14715,10 +14839,12 @@ $(function() {
 
     new Header();
     new Slider();
+    new Faq();
+    new Centros();
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/header/header":5,"../_modules/slider/slider":6,"jquery":3,"underscore":4}]},{},[7])
+},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/centros/centros":5,"../_modules/faq/faq":6,"../_modules/header/header":7,"../_modules/slider/slider":8,"jquery":3,"underscore":4}]},{},[9])
 
 //# sourceMappingURL=main.js.map

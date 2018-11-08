@@ -1,0 +1,18 @@
+[
+    {
+        "placeholder":"nombre y apellido",
+        "type":"text"
+    },
+    {
+        "placeholder":"email",
+        "type":"email"
+    },
+    {
+        "placeholder":"telefono",
+        "type":"tel"
+    },
+    {
+        "placeholder":"mensaje",
+        "type":"textarea"
+    }
+]

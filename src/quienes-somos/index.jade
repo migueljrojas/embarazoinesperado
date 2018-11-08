@@ -1,0 +1,40 @@
+extends ../_layouts/base
+
+include ../_modules/slider/slider
+include ../_modules/form/form
+include ../_modules/contacto/contacto
+include ../_modules/hero/hero
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.quienes-somos
+        +hero('la fundacion', '/images/somos.jpg', '/images/somos2.jpg')
+
+        section.quienes-somos__content
+            .quienes-somos__content__col.quienes-somos__content__col--mision
+                .quienes-somos__content__data
+                    h2.quienes-somos__content__data__title.quienes-somos__content__data__title--mision mision
+                    p.quienes-somos__content__data__text.quienes-somos__content__data__text--mision Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+
+            .quienes-somos__content__col.quienes-somos__content__col--vision
+                .quienes-somos__content__data
+                    h2.quienes-somos__content__data__title.quienes-somos__content__data__title--vision vision
+                    p.quienes-somos__content__data__text.quienes-somos__content__data__text--vision Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            
+            .quienes-somos__content__col.quienes-somos__content__col--valores
+                .quienes-somos__content__data
+                    h2.quienes-somos__content__data__title.quienes-somos__content__data__title--valores valores
+                    .quienes-somos__content__data__text.quienes-somos__content__data__text--valores Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt
+                        ul
+                            li Algo
+                            li Algo
+                            li Algo
+                            li Algo
+                            li Algo
+                            li Algo
+                            li Algo
+        +contacto            
+                    

@@ -1,0 +1,22 @@
+[
+    {
+        "name":"Cesar Alarcon",
+        "speciality":"contador"
+    },
+    {
+        "name":"miguel Rojas",
+        "speciality":"diseñador"
+    },
+    {
+        "name":"carlos",
+        "speciality":"corredor"
+    },
+    {
+        "name":"juan",
+        "speciality":"policia"
+    },
+    {
+        "name":"edgar",
+        "speciality":"abogado"
+    }
+]

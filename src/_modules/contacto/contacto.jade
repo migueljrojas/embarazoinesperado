@@ -1,0 +1,23 @@
+mixin contacto(spec)
+    section.contacto#contacto
+        .contacto__col.contacto__col--map
+            .contacto__map
+                .embed-responsive.embed-responsive-16by9
+                    iframe.embed-responsive-item(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3257731742233!2d-58.45196358530883!3d-34.545306180474704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43ae6018ddf%3A0x3d7f60a75bfa308a!2sEstadio+Monumental+Antonio+Vespucio+Liberti!5e0!3m2!1ses-419!2sar!4v1541084585328')
+
+        .contacto__col.contacto__col--content
+            .contacto__content
+                .contacto__content__data
+                    h2.contacto__content__title Contacto
+                .contacto__content__info
+                    i.fa.fa-whatsapp
+                    p.contacto__content__info__text +54911 5802 1696
+                .contacto__content__info
+                    i.fa.fa-map-marker
+                    p.contacto__content__info__text Santa Fe 2000, Retiro - Buenos Aires
+        
+        .contacto__col.contacto__col--form
+            .contacto__form
+                h2.contacto__form__title hacenos tu consulta
+                .contacto__form__content
+                    +uiform(site.data.form, 'enviar')

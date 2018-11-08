@@ -1,0 +1,51 @@
+@mixin uiform($marginBtm: 5%, $background: $pink, $placeholderColor: $white, $borderColor: $white, $btmBackground: $white, $btmColor: $darkestGray) {
+    .uiform {
+        &__input {
+            display: inline;
+            width: 100%;
+            background: $background;
+            border: none;
+            border-bottom: 2px solid $borderColor;
+            text-transform:capitalize;
+            margin-bottom: 20px;
+
+            @include mq(sm) {
+                margin-bottom: $marginBtm;
+            }
+
+            &--textarea {
+                border-bottom: 2px solid $borderColor;
+                resize: none;
+                height: 100px;
+
+                @include mq(sm) {
+                    height: 10vw;
+                }
+            }
+
+            &::placeholder {
+                color: $placeholderColor;
+                font-size: 12px;
+
+                @include mq(sm) {
+                    font-size: 1vw;
+                }
+            }
+        }
+
+        &__button {
+            color: $btmColor;
+            background: $btmBackground;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            float: right;
+            width: 50%;
+            font-size: 12px;
+
+            @include mq(sm) {
+                font-size: 1vw;
+            }
+        }
+    }
+}

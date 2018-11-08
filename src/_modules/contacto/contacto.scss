@@ -1,0 +1,177 @@
+.contacto {
+    font-family: $titleFont;
+    background: $pink;
+    display: flex;
+    flex-direction: column;
+
+    @include mq(sm) {
+        height: 33.34vw;
+        flex-direction: row;
+    }
+
+    &__col {
+        position: relative;
+
+        @include mq(sm) {
+            width: 33.34%;
+        }
+
+        &--map {
+            order: 3;
+
+            @include mq(sm) {
+                order: 1;
+            }
+        }
+
+        &--content {
+            order: 1;
+
+            @include mq(sm) {
+                order: 2;
+            }
+        }
+
+        &--form {
+            order: 2;
+
+            @include mq(sm) {
+                order: 3;
+            }
+        }
+    }
+
+    &__map {
+        height: 100vw;
+
+        @include mq(sm) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding-bottom: 0;
+            height: auto;
+        }
+    }
+
+    &__content {
+        @include padd(top);
+
+        padding-left: 10%;
+        padding-right: 10%;
+        background: $pink;
+
+        @include mq(sm) {
+            @include padd(both);
+        }
+
+        &__data {
+            margin: 0;
+            display: flex;
+            padding-left: 12%;
+
+            @include mq(sm) {
+                padding-left: 8%;
+                padding-bottom: 2.5%;
+            }
+        }
+
+        &__title {
+            @include title($background: $white);
+
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+
+            &:after {
+                @include mq(sm) {
+                    width: 2vw;
+                    height: .3vw;
+                }
+            }
+
+            @include mq(sm) {
+                font-size: 3vw;
+            }
+        }
+
+        &__info {
+            display: flex;
+            padding-top: 2.5%;
+
+            @include mq(sm) {
+                padding-top: 0;
+            }
+
+            i {
+                color: $black;
+                font-weight: 700;
+                font-size: 24px;
+                display: flex;
+                min-width: 25px;
+                justify-content: center;
+                align-items: center;
+
+                @include mq(sm) {
+                    min-width: 5%;
+                    font-size: 1.5vw;
+                }
+            }
+
+            &__text {
+                color:$white;
+                font-weight: 700;
+                margin:0;
+                font-size: 18px;
+                padding-left: 10px;
+                display: flex;
+
+                @include mq(sm) {
+                    padding-left: 2.5%;
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+
+    &__form {
+        @include padd(top);
+
+        padding-bottom: 80px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        @include mq(sm) {
+            padding-left: 40px;
+            padding-right: 0;
+            width: 75%;
+        }
+
+        &__title {
+            border-top: 3px solid;
+            font-size: 20px;
+            color: $white;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 40px 0 40px 0;
+            text-align: left;
+            font-weight: 700;
+
+            @include mq(sm) {
+                padding: 5% 0 10% 0;
+                font-size: 1.5vw;
+                border-top: none;
+            }
+        }
+
+        &__content {
+            @include uiform;
+        }
+    }
+}
+
+.embed-responsive.embed-responsive-16by9 {
+    width: 100%;
+    height: 100%;
+}

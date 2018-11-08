@@ -1,0 +1,215 @@
+.asesoria-profesional {
+    &__content {
+        @include mq(sm) {
+            display: flex;
+        }
+
+        &__col {
+            position: relative;
+
+            @include mq(sm) {
+                width: 33.3334%;
+                height: 33.4vw;
+            }
+        }
+
+        &__especialistas {
+            background: $darkestGray;
+            padding: 8%;
+            width: 100%;
+
+            @include mq(sm) {
+                height: 100%;
+            }
+
+            &__title {
+                @include title($color: $pink, $background: $white);
+
+                font-weight: 700;
+                margin: 0;
+
+                @include mq(sm) {
+                    font-size: 2vw;
+                }
+            }
+
+            &__comment {
+                padding-top: 2.5%;
+                color: $white;
+                margin: 0;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
+
+            }
+
+            &__list {
+                padding-top: 5%;
+
+                 li {
+                     color: $white;
+                     padding-bottom: 2.5%;
+
+                     @include mq(sm) {
+                         font-size: 1.5vw;
+                     }
+                 }
+            }
+        }
+
+        &__slider {
+            width: 100%;
+            height: 120vw;
+            margin-bottom: 0 !important;
+
+            @include mq(sm) {
+                height: 100%;
+            }
+        }
+
+        &__slide {
+            @include img($imgwidth: auto, $imgheight:100%);
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+            padding-bottom: 0;
+
+            &__details {
+                height: 100%;
+                width: 100%;
+                padding: 10%;
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background: linear-gradient(transparent, $black);
+
+                &__container {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    padding: 10%;
+                }
+            }
+
+            &__name {
+                text-transform: uppercase;
+                font-family: $titleFont;
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+                color: $white;
+                font-size: 28px;
+
+                @include mq(sm) {
+                    font-size: 2.5vw;
+                }
+            }
+
+            &__speciality {
+                text-transform: uppercase;
+                font-family: $titleFont;
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+                color: $pink;
+                font-size: 18px;
+
+                @include mq(sm) {
+                    font-size: 1.8vw;
+                }
+            }
+
+            &__image {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &__asesoramiento {
+            padding: 8%;
+            height: 100%;
+            width: 100%;
+
+            &__image {
+                @include img($imgwidth: auto, $imgheight: 100%);
+
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                padding-bottom: 0;
+                filter: grayscale(100%);
+            }
+
+            &__title {
+                @include title($color: $pink, $background: $white);
+
+                font-weight: 700;
+                margin: 0;
+
+                @include mq(sm) {
+                    font-size: 2vw;
+                }
+            }
+
+            &__text {
+                position: relative;
+                padding-top: 2.5%;
+                color: $lightGray;
+                padding-bottom: 8%;
+                margin: 0;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
+            }
+
+            &__request {
+                position: relative;
+                width: 100%;
+                color: $black;
+                background: $white;
+                border: none;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-family: $titleFont;
+                padding: 5%;
+
+                @include mq(sm) {
+                    display: flex;
+                    justify-content: center;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+.slick-list,
+.slick-track {
+    height: 100%;
+    width: 100%;
+}
+
+.slick-dots {
+    bottom: 0;
+    padding-bottom: 2%;
+    display: flex;
+}
+
+.slick-arrow {
+    &:before {
+        color: $pink;
+        border-radius: 100%;
+    }
+}

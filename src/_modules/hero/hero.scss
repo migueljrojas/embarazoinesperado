@@ -1,0 +1,140 @@
+.hero {
+    @include trans;
+
+    padding-top: 22vw;
+
+    @include mq(sm) {
+        height: 45vw;
+        position: relative;
+        padding-top:0;
+
+        &.-open {
+            transform: translateX(-33.34%);
+        }
+    }
+
+    &__image {
+        @include img(100%, $imgheight: 100%, $imgwidth: auto);
+
+        @include mq(sm) {
+            @include img($imgheight: 100%, $imgwidth: 100%);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding-bottom: 0;
+            height: auto;
+        }
+    }
+
+    &__title {
+        @include heroTitle;
+    }
+
+    &__content {
+        @include mq(sm) {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 33.34%;
+        }
+    }
+
+    &__contact {
+        background: $pink;
+        padding: 20px;
+        font-family: $titleFont;
+        color: $white;
+        padding: 20px 20px 10px 20px;
+        width: 100%;
+
+        @include mq(sm) {
+            background: transparentize($pink, .6);
+            position: relative;
+        }
+
+        &__text {
+            font-weight: 700;
+            text-align: center;
+            padding-bottom: 15px;
+
+            h2 {
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 28px;
+
+                @include mq(sm) {
+                    font-size: 2.6vw;
+                }
+            }
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__icon {
+            font-size: 46px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+
+            @include mq(sm) {
+                font-size: 4vw;
+            }
+        }
+
+        &__info {
+            &__text {
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 13px;
+                display: flex;
+                justify-content: flex-end;
+
+                @include mq(sm) {
+                    font-size: 1.25vw;
+                }
+
+                strong {
+                    padding-left: 8px;
+                }
+            }
+
+            &__number {
+                margin: 0;
+                color: $white;
+                display: flex;
+                font-size: 32px;
+                margin-top: -8px;
+
+                @include mq(sm) {
+                    font-size: 3vw;
+                }
+
+                strong {
+                    padding-left: 8px;
+                }
+            }
+        }
+    }
+
+    &__video {
+        @include img($imgwidth: auto, $imgheight: 100%);
+
+        @include mq(sm) {
+            @include img(50%, $imgwidth: 100%, $imgheight: 100%);
+
+            height: 16.66vw;
+            width: 50%;
+            position: relative;
+        }
+    }
+}

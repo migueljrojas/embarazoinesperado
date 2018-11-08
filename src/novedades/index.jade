@@ -1,0 +1,54 @@
+extends ../_layouts/base
+
+include ../_modules/form/form
+include ../_modules/contacto/contacto
+include ../_modules/hero/hero
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.novedades
+        +hero('novedades', '/images/novedades.jpeg', '/images/novedades8.jpg')
+        
+        section.novedades__content
+            .novedades__content__main-note
+                .novedades__content__main-note__col.novedades__content__main-note__col--image
+                    .novedades__content__main-note__image
+                        img(src='/images/novedades-main.jpg')
+                .novedades__content__main-note__col.novedades__content__main-note__col--content
+                    .novedades__content__main-note__data
+                        h2.novedades__content__main-note__title Aborto inesperado
+                        span.novedades__content__main-note__date 30/09/2018
+                        p.novedades__content__main-note__summary Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        a.novedades__content__main-note__more Ver mas...
+            
+        section.novedades__notes
+            .novedades__notes__container
+                each item in site.data.note
+                    .novedades__notes__container__note
+                        .novedades__notes__container__note__image
+                            img(src=item.image)
+                        .novedades__notes__container__note__info
+                            h2.novedades__notes__container__note__title=item.title
+                            span.novedades__notes__container__note__date=item.date
+                            p.novedades__notes__container__note__summary=item.summary
+                            a.novedades__notes__container__note__more ver mas...
+        
+        section.novedades__newsletter
+            .novedades__newsletter__col.novedades__newsletter__col--form
+                .novedades__newsletter__content
+                    h2.novedades__newsletter__content__title newsletter
+                    p.novedades__newsletter__content__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .novedades__newsletter__content__form
+                        +uiform(site.data.newsletter, 'suscribete')
+            .novedades__newsletter__col.novedades__newsletter__col--short-note
+                each item in site.data.shortNote
+                    .novedades__newsletter__short-note
+                        span.novedades__newsletter__short-note__date=item.date
+                        h2.novedades__newsletter__short-note__title=item.title
+                        p.novedades__newsletter__short-note__summary=item.summary
+                        a.novedades__newsletter__short-note__more ver mas...
+
+        +contacto

@@ -1,161 +1,23 @@
 .home {
-    margin: 0;
-    padding: 0;
-    &__hero {
-        @include trans();
-
-        padding-top: 22vw;
-
-        @include mq(sm) {
-            height: 45vw;
-            position: relative;
-            padding-top:0;
-
-            &.-open {
-                transform: translateX(-33.3%);
-            }
-        }
-
-        &__image {
-            @include img($ratio: 120%, $imgheight: 100%, $imgwidth: auto);
-
-            @include mq(sm) {
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                padding-bottom: 0;
-                height: auto;
-            }
-        }
-
-        &__content {
-            @include mq(sm) {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                align-items: flex-end;
-                width: 33.33333333%;
-            }
-        }
-
-        &__contact {
-            background: $pink;
-            padding: 20px;
-            font-family: $titleFont;
-            color: $white;
-            padding: 20px 20px 10px 20px;
-            width: 100%;
-
-            @include mq(sm) {
-                background: transparentize($pink, .6);
-                position: relative;
-            }
-
-            &__text {
-                font-weight: 700;
-                text-align: center;
-                padding-bottom: 15px;
-
-                h2 {
-                    margin: 0;
-                    text-transform: uppercase;
-                    font-size: 28px;
-
-                    @include mq(sm) {
-                        font-size: 2.6vw;
-                    }
-                }
-            }
-
-            &__container {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            &__icon {
-                font-size: 46px;
-                font-weight: 700;
-                display: flex;
-                align-items: center;
-
-                @include mq(sm) {
-                    font-size: 4vw;
-                }
-            }
-
-            &__info {
-
-                &__text {
-                    text-transform: uppercase;
-                    margin: 0;
-                    font-size: 13px;
-                    display: flex;
-                    justify-content: flex-end;
-
-                    @include mq(sm) {
-                        font-size: 1.25vw;
-                    }
-
-                    strong {
-                        padding-left: 8px;
-                    }
-                }
-
-                &__number {
-                    margin: 0;
-                    color: $white;
-                    display: flex;
-                    font-size: 32px;
-                    margin-top: -8px;
-
-                    @include mq(sm) {
-                        font-size: 3vw;
-                    }
-
-                    strong {
-                        padding-left: 8px;
-                    }
-                }
-            }
-        }
-
-        &__video {
-            @include img($imgwidth: auto, $imgheight: 100%);
-
-            @include mq(sm) {
-                width: 50%;
-                position: relative;
-                overflow: hidden;
-            }
-        }
-    }
-
     &__who-we-are {
         @include mq(sm) {
             display: flex;
+            height: 33.334vw;
         }
 
         &__col {
             display: flex;
-            overflow: hidden;
-
+            position: relative;
 
             @include mq(sm) {
-                width: 33.33333333%;
-                height: 33.3vw;
+                width: 33.34%;
+                height: 100%;
             }
 
             &--internal {
                 width: 50%;
                 display: flex;
                 flex-direction: column;
-
             }
 
             &--resize {
@@ -168,58 +30,90 @@
         }
 
         &__about {
-            @include padd(both,half);
-            background: $black;
-            padding-left: 20px;
-            padding-right: 20px;
-            flex-grow: 2;
+            @include padd(both);
 
-            @include mq(sm) {
-                height: 100%;
-                padding: 40px;
-            }
+            background: $darkestGray;
+            padding-left: 8%;
+            padding-right: 8%;
 
             &__title {
                 @include title($color: $pink, $background: $white);
+
                 font-weight: 700;
                 margin: 0;
 
                 @include mq(sm) {
-                    font-size: 32px;
+                    font-size: 2.5vw;
                 }
             }
 
             &__text {
-                padding-top: 10px;
+                padding-top: 2.5%;
+                color: $lightGray;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
             }
         }
 
         &__article {
-            @include padd(both,half);
-            background: url('https://picsum.photos/1380/700');
-            background-size: cover;
-            padding-left: 20px;
-            padding-right: 20px;
+            width: 100%;
 
-            @include mq(sm) {
-                padding: 40px;
+            &__image {
+                @include img($imgwidth: auto, $imgheight: 100%);
+
+                filter: grayscale(100%);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
                 height: 100%;
+                padding-bottom: 0;
+            }
+
+            &__overlay {
+                @include overlay(rgba(255,255,255,.5));
             }
 
             &__title {
                 @include title($color: $pink, $background: $black);
+                @include padd(top);
+
+                padding-left: 8%;
+                padding-right: 8%;
                 font-weight: 700;
                 margin: 0;
+                z-index: 3;
+
+                &:after {
+                    left: auto;
+                }
 
                 @include mq(sm) {
-                    font-size: 32px;
+                    display: flex;
+                    font-size: 2.5vw;
+                    flex-grow: 2;
                 }
             }
 
             &__text {
-                padding-top: 10px;
-                width: 50%;
+                @include padd(bottom);
+
+                padding-left: 8%;
+                padding-right: 8%;
+                padding-top: 2.5%;
                 font-size: 24px;
+                color: $lightGray;
+                margin: 0;
+                padding-right: 50%;
+
+                @include mq(sm) {
+                    display: flex;
+                    position: absolute;
+                    font-size: 2vw;
+                }
             }
         }
 
@@ -238,9 +132,10 @@
 
             &__data {
                 padding: 10px;
+                height: 100%;
 
                 @include mq(sm) {
-                    padding: 15px;
+                    padding: 5%;
                 }
             }
 
@@ -252,19 +147,20 @@
                 font-weight: 700;
 
                 @include mq(sm) {
-                    font-size: 18px;
+                    font-size: 1.3vw;
                     margin: 0;
                 }
             }
 
             &__text {
                 font-size: 14px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding-top: 2.5%;
+                padding-bottom: 2.5%;
                 margin: 0;
+                color: $darkGray;
 
                 @include mq(sm) {
-                    font-size: 16px;
+                    font-size: 1.2vw;
                 }
             }
 
@@ -274,169 +170,20 @@
                 bottom: 0;
                 right: 0;
                 left: 0;
-                background: url('https://picsum.photos/1380/700');
-                background-size: cover;
-                background-color: transparentize($pink, .2);
-                background-blend-mode: multiply;
 
-                @include mq(sm) {
-
-                }
-            }
-        }
-    }
-
-    &__contacto {
-        font-family: $titleFont;
-
-        @include mq(sm) {
-            display: flex;
-        }
-
-        &__image {
-            @include img($imgheight:100%, $imgwidth: auto);
-
-            @include mq(sm) {
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                padding-bottom: 0;
-                height: auto;
-                width: 33.3%;
-            }
-        }
-
-        &__content {
-            @include padd(both, half);
-
-            padding-left: 20px;
-            padding-right: 20px;
-            background: $pink;
-
-            @include mq(sm) {
-                display: flex;
-                width: 66.666666%;
-            }
-
-            &__col {
-                @include padd(both, half);
-
-                @include mq(sm) {
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    width: 50%;
-                }
-            }
-
-            &__data {
-                margin: 0;
-                display: flex;
-
-                @include mq(sm) {
-                    justify-content: center;
-                    padding-left: 80px;
-                }
-            }
-
-            &__title {
-                @include title($background: $white);
-
-                font-weight: 700;
-                font-size: 36px;
-                margin: 0;
-
-                @include mq(sm) {
-                    font-size: 42px;
-                }
-            }
-
-            &__number {
-                display: flex;
-                padding-top: 10px;
-
-                @include mq(sm) {
-                    justify-content: center;
-                    padding-top: 0;
+                &--left {
+                    background: url('/images/home2.jpg');
+                    background-size: cover;
+                    background-color: transparentize($darkPink, .2);
+                    background-blend-mode: multiply;
                 }
 
-                ul {
-                    display: flex;
-                    align-self: center;
+                &--right {
+                    background: url('/images/home3.jpg');
+                    background-size: cover;
+                    background-color: transparentize($darkPink, .2);
+                    background-blend-mode: multiply;
                 }
-
-                i {
-                    color: $black;
-                    font-weight: 700;
-                    font-size: 24px;
-
-                    @include mq(sm) {
-                        font-size: 28px;
-                    }
-                }
-
-                &__text {
-                    color:$white;
-                    font-weight: 700;
-                    padding-left: 10px;
-                    margin:0;
-                    font-size: 24px;
-                }
-            }
-        }
-
-        &__form {
-            @include mq(sm) {
-                padding-left: 40px;
-                padding-right: 0;
-                width: 75%;
-            }
-
-            &__title {
-                border-top: 3px solid;
-                font-size: 24px;
-                color: $white;
-                text-transform: uppercase;
-                margin: 0;
-                padding: 40px 0 20px 0;
-                text-align: center;
-                font-weight: 700;
-
-                @include mq(sm) {
-                    padding: 10px 0 20px 0;
-                    font-size: 20px;
-                    border-top: none;
-                }
-            }
-
-            &__input {
-                display: flex;
-                width: 100%;
-                background: $pink;
-                border: none;
-                border-bottom: 2px solid $white;
-                margin-bottom: 20px;
-
-                &:last-of-type {
-                    margin-bottom: 40px;
-                }
-
-                &::placeholder {
-                    color: $white;
-                    font-size: 16px;
-                }
-            }
-
-            &__button {
-                color: $black;
-                background: $white;
-                font-weight: 700;
-                text-transform: uppercase;
-                border: none;
-                padding: 5px 40px;
-                float: right;
-                width: 50%;
-                font-size: 12px;
             }
         }
     }

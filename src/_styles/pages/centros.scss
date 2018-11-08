@@ -1,0 +1,187 @@
+.centros {
+    &__content {
+        @include mq(sm) {
+            display: flex;
+            height: 33.34vw;
+        }
+
+        &__col {
+            position: relative;
+
+            &--list {
+                background: $darkestGray;
+                color: $white;
+
+                @include mq(sm) {
+                    width: 33.34%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                }
+            }
+
+            &--map {
+                @include mq(sm) {
+                    width: 66.66%;
+                }
+            }
+        }
+
+        &__button {
+            @include padd(both,half);
+
+            background: $darkestGray;
+            padding-left: 8%;
+            padding-right: 8%;
+            width: 100%;
+            border: none;
+            font-size: 24px;
+            font-family: $titleFont;
+            color: $pink;
+            font-weight: 700;
+            height: 100px;
+
+            @include mq(sm) {
+                display: none;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            &--open {
+                position: fixed;
+                top: 0;
+                z-index: 5000;
+            }
+        }
+
+        &__centro-container {
+            &--open {
+                position: fixed;
+                top: 100px;
+                z-index: 2000;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                background: transparentize($darkestGray, .1);
+
+                &::-webkit-scrollbar-track {
+                	background-color: $black;
+                }
+
+                &::-webkit-scrollbar {
+                	width: 6px;
+                    background-color: $black;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                	background-color: $pink;
+                }
+            }
+
+            @include mq(sm) {
+                display:flex;
+                flex-direction: column;
+                width: 100%;
+                overflow-y: scroll;
+                overflow-x:hidden;
+                direction: rtl;
+                height: 100%;
+
+                &::-webkit-scrollbar-track {
+                	background-color: $black;
+                }
+
+                &::-webkit-scrollbar {
+                	width: 6px;
+                    background-color: $black;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                	background-color: $pink;
+                }
+            }
+        }
+
+        &__centro-data {
+            height: 0;
+            overflow: hidden;
+
+            @include mq(sm) {
+                @include padd(both, half);
+
+                height: auto;
+                overflow: visible;
+                width: 100%;
+                padding-left: 8%;
+                padding-right: 8%;
+                text-align: left;
+                position: relative;
+                font-size: 1.3vw;
+            }
+
+            &--open {
+                @include padd(both, half);
+
+                padding-left: 8%;
+                padding-right: 8%;
+                height: auto;
+                overflow: visible;
+
+                &:nth-child(odd) {
+                    background: transparentize($black, .1);
+                }
+            }
+
+            &.-show {
+                @include padd(both, half);
+
+                display: block;
+                padding-left: 8%;
+                padding-right: 8%;
+                height: auto;
+                overflow: visible;
+                background: $darkestGray - #111;
+
+                @include mq(sm) {
+                    @include arrow(right, $darkestGray - #111);
+
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+
+        &__map-container {
+            height: 100vw;
+
+            @include mq(sm) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 100%;
+            }
+
+            iframe {
+                height: 100%;
+                width: 100%;
+                border: none;
+            }
+        }
+
+        &__center {
+            color: $pink;
+        }
+
+        &__location {
+            color: $midGray;
+        }
+    }
+}

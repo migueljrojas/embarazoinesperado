@@ -1,0 +1,24 @@
+mixin uiform(config, buttonText)
+    form.uiform
+        .uiform__wrapper
+            each input in config
+                .uiform__group
+                    if input.label && input.type != 'radio' && input.type != 'checkbox'
+                        label.uiform__label(for=input.id)=input.label
+                    
+                    if input.type == 'text' || input.type == 'email' || input.type == 'number' || input.type == 'password' || input.type == 'tel'
+                        input.uiform__input(placeholder=input.placeholder, type=input.type, id=input.id, name=input.id class='uiform__input--#{input.type}')
+                    
+                    if input.type == 'radio' || input.type == 'checkbox'
+                        input.uiform__input(placeholder=input.placeholder, type=input.type, class='uiform__input--#{input.type}', id=input.id, name=input.id)
+                        label.uiform__label(for=input.id)=input.label
+
+                    if input.type == 'select' 
+                        select.uiform__input(class='uiform__input--#{input.type}', id=input.id, name=input.id)
+                            each option in input.options
+                                option=option
+
+                    if input.type == 'textarea' 
+                        textarea.uiform__input(placeholder= input.placeholder, class='uiform__input--#{input.type}', id=input.id, name=input.id)
+
+            button.uiform__button=buttonText

@@ -1,0 +1,91 @@
+.quienes-somos {
+    &__content {
+        @include mq(sm) {
+            display: flex;
+        }
+
+        &__col {
+            padding: 8%;
+
+            @include mq(sm) {
+                padding: 3%;
+            }
+
+            &--mision {
+                background: $darkestGray;
+            }
+
+            &--vision {
+                background: $white;
+            }
+
+            &--valores {
+                background: $lightestGray;
+            }
+
+            @include mq(sm) {
+                width: 33.34%;
+                height: 33.34vw;
+            }
+        }
+
+        &__data {
+            &__title {
+                margin: 0;
+
+                &--mision {
+                    @include title($color: $pink, $background: $white);
+                }
+
+                &--vision {
+                    @include title($color: $pink, $background: $black);
+                }
+
+                &--valores {
+                    @include title($color: $pink, $background: $black);
+                }
+
+                @include mq(sm) {
+                    font-size: 2vw;
+                }
+            }
+
+            &__text {
+                padding-top: 10px;
+
+                @include mq(sm) {
+                    font-size: 1.2vw;
+                }
+
+                &--mision {
+                    color: $midGray;
+                }
+
+                &--vision {
+                    color: $darkGray;
+                }
+
+                &--valores {
+                    color: $darkGray;
+                }
+
+                ul {
+                    padding-top: 20px;
+
+                    @include mq(sm) {
+                        padding-top: 5%;
+                    }
+                }
+
+                li {
+                    padding-bottom: 10px;
+
+                    @include mq(sm) {
+                        padding-bottom: 4%;
+                        font-size: 1.2vw;
+                    }
+                }
+            }
+        }
+    }
+}

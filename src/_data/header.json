@@ -5,30 +5,26 @@
     },
     {
         "name":"quienes somos",
-        "url":""
+        "url":"/quienes-somos"
     },
     {
-        "name":"asesoramiento profesional",
-        "url":""
-    },
-    {
-        "name":"consulta gratuita",
-        "url":""
+        "name":"asesoria profesional gratuita",
+        "url":"/asesoria-profesional"
     },
     {
         "name":"preguntas frecuentes",
-        "url":""
+        "url":"/preguntas-frecuentes"
     },
     {
         "name":"novedades",
-        "url":""
+        "url":"/novedades"
     },
     {
         "name":"red nacional de centros",
-        "url":""
+        "url":"/centros"
     },
     {
         "name":"contacto y ubicacion",
-        "url":""
+        "url":"#contacto"
     }
 ]

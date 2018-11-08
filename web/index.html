@@ -42,48 +42,51 @@
       <div class="header__nav__container">
         <ul class="header__nav__menu">
           <li><a href="/">Home</a></li>
-          <li><a href="">quienes somos</a></li>
-          <li><a href="">asesoramiento profesional</a></li>
-          <li><a href="">consulta gratuita</a></li>
-          <li><a href="">preguntas frecuentes</a></li>
-          <li><a href="">novedades</a></li>
-          <li><a href="">red nacional de centros</a></li>
-          <li><a href="">contacto y ubicacion</a></li>
+          <li><a href="/quienes-somos">quienes somos</a></li>
+          <li><a href="/asesoria-profesional">asesoria profesional gratuita</a></li>
+          <li><a href="/preguntas-frecuentes">preguntas frecuentes</a></li>
+          <li><a href="/novedades">novedades</a></li>
+          <li><a href="/centros">red nacional de centros</a></li>
+          <li><a href="#contacto">contacto y ubicacion</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <main class="home">
-    <section class="home__hero js-hero">
-      <div class="home__hero__image"><img src="https://picsum.photos/1680/700"></div>
-      <div class="home__hero__content">
-        <div class="home__hero__contact">
-          <div class="home__hero__contact__text"> 
+    <section class="hero js-hero">
+      <div class="hero__image"><img src="images/home1.jpg"/></div>
+      <div class="hero__title js-title">
+        <h1></h1>
+      </div>
+      <div class="hero__content">
+        <div class="hero__contact">
+          <div class="hero__contact__text"> 
             <h2>podemos ayudarte</h2>
           </div>
-          <div class="home__hero__contact__container">
-            <div class="home__hero__contact__icon"><i class="fa fa-whatsapp"></i></div>
-            <div class="home__hero__contact__info">
-              <p class="home__hero__contact__info__text">contactanos<strong>consulta gratuita</strong></p>
-              <p class="home__hero__contact__info__number">
+          <div class="hero__contact__container">
+            <div class="hero__contact__icon"><i class="fa fa-whatsapp"></i></div>
+            <div class="hero__contact__info">
+              <p class="hero__contact__info__text">contactanos<strong>consulta gratuita</strong></p>
+              <p class="hero__contact__info__number">
                  
                 +54911<strong> 5802 1696</strong>
               </p>
             </div>
           </div>
         </div>
-        <div class="home__hero__video"><img src="https://picsum.photos/1280/700"></div>
+        <div class="hero__video"><img src="images/home.jpg"/></div>
       </div>
     </section>
     <section class="home__who-we-are">
       <div class="home__who-we-are__col">
         <div class="home__who-we-are__about">
           <h2 class="home__who-we-are__about__title">Somos</h2>
-          <p class="home__who-we-are__about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="home__who-we-are__about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudti exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
       </div>
       <div class="home__who-we-are__col">
-        <div class="home__who-we-are__article">
+        <div class="home__who-we-are__article"><img src="images/home4.jpg" class="home__who-we-are__article__image">
+          <div class="home__who-we-are__article__overlay"></div>
           <h2 class="home__who-we-are__article__title">No te desesperes</h2>
           <p class="home__who-we-are__article__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt</p>
         </div>
@@ -97,12 +100,12 @@
             </div>
           </div>
           <div class="home__who-we-are__wrapper">
-            <div class="home__who-we-are__wrapper__image"></div>
+            <div class="home__who-we-are__wrapper__image home__who-we-are__wrapper__image--left"></div>
           </div>
         </div>
         <div class="home__who-we-are__col--internal">
           <div class="home__who-we-are__wrapper">
-            <div class="home__who-we-are__wrapper__image"></div>
+            <div class="home__who-we-are__wrapper__image home__who-we-are__wrapper__image--right"></div>
           </div>
           <div class="home__who-we-are__wrapper">
             <div class="home__who-we-are__wrapper__data home__who-we-are__wrapper--arrowup">
@@ -113,29 +116,47 @@
         </div>
       </div>
     </section>
-    <section class="home__contacto">
-      <div class="home__contacto__image"><img src="https://picsum.photos/1280/700"></div>
-      <div class="home__contacto__content">
-        <div class="home__contacto__content__col">
-          <div class="home__contacto__content__data">
-            <h2 class="home__contacto__content__title">Contacto</h2>
-          </div>
-          <div class="home__contacto__content__number">
-            <ul>
-              <li><i class="fa fa-whatsapp"></i></li>
-            </ul>
-            <p class="home__contacto__content__number__text">+54911 5802 1696</p>
+    <section id="contacto" class="contacto">
+      <div class="contacto__col contacto__col--map">
+        <div class="contacto__map">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3257731742233!2d-58.45196358530883!3d-34.545306180474704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43ae6018ddf%3A0x3d7f60a75bfa308a!2sEstadio+Monumental+Antonio+Vespucio+Liberti!5e0!3m2!1ses-419!2sar!4v1541084585328" class="embed-responsive-item"></iframe>
           </div>
         </div>
-        <div class="home__contacto__content__col">
-          <div class="home__contacto__form">
-            <h2 class="home__contacto__form__title">hacenos tu consulta</h2>
-            <form class="home__contacto__form__body">
-              <input placeholder="Nombre y apellido" type="text" class="home__contacto__form__input">
-              <input placeholder="Email" type="email" class="home__contacto__form__input">
-              <input placeholder="Telefono" type="phone" class="home__contacto__form__input">
-              <input placeholder="Mensaje" class="home__contacto__form__input">
-              <button class="home__contacto__form__button">Enviar</button>
+      </div>
+      <div class="contacto__col contacto__col--content">
+        <div class="contacto__content">
+          <div class="contacto__content__data">
+            <h2 class="contacto__content__title">Contacto</h2>
+          </div>
+          <div class="contacto__content__info"><i class="fa fa-whatsapp"></i>
+            <p class="contacto__content__info__text">+54911 5802 1696</p>
+          </div>
+          <div class="contacto__content__info"><i class="fa fa-map-marker"></i>
+            <p class="contacto__content__info__text">Santa Fe 2000, Retiro - Buenos Aires</p>
+          </div>
+        </div>
+      </div>
+      <div class="contacto__col contacto__col--form">
+        <div class="contacto__form">
+          <h2 class="contacto__form__title">hacenos tu consulta</h2>
+          <div class="contacto__form__content">
+            <form class="uiform">
+              <div class="uiform__wrapper">
+                <div class="uiform__group">
+                  <input placeholder="nombre y apellido" type="text" class="uiform__input uiform__input--text"/>
+                </div>
+                <div class="uiform__group">
+                  <input placeholder="email" type="email" class="uiform__input uiform__input--email"/>
+                </div>
+                <div class="uiform__group">
+                  <input placeholder="telefono" type="tel" class="uiform__input uiform__input--tel"/>
+                </div>
+                <div class="uiform__group">
+                  <textarea placeholder="mensaje" class="uiform__input uiform__input--textarea"></textarea>
+                </div>
+                <button class="uiform__button">enviar</button>
+              </div>
             </form>
           </div>
         </div>

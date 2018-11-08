@@ -4,6 +4,10 @@
 
 .-hideOverflow {
     overflow: hidden;
+
+    @include mq(sm) {
+        overflow: visible;
+    }
 }
 
 .-static{

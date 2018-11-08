@@ -9,6 +9,7 @@
     color: $color;
     position: relative;
     padding-bottom: 10px;
+    font-weight: 700;
 
     &:after {
         content: "";
@@ -113,13 +114,13 @@
     }
 }
 
-@mixin overlay($level: .5, $zdex: 2) {
+@mixin overlay($level: rgba(0,0,0,.5), $zdex: 2) {
     position: absolute;
     top:0;
     left:0;
     right:0;
     bottom:0;
-    background: rgba(0,0,0,$level);
+    background: $level;
     z-index: $zdex;
 }
 
@@ -191,7 +192,8 @@
 @mixin arrow($pointTo, $color: inherit) {
     &:after {
         content: "";
-        border: 10px solid $color;
+        border: 10px solid;
+        border-color: $color;
         height: 0;
         width: 0;
         position: absolute;
@@ -227,6 +229,47 @@
             border-top-color: transparent;
             left: 100%;
             top: calc(50% - 10px);
+        }
+    }
+}
+
+@mixin heroTitle($color: $white, $font: $titleFont, $fontSizeMobile: $xl, $fontSizeDesktop: $head) {
+    color: $color;
+    text-transform: uppercase;
+    font-family: $font;
+    padding: 20px 30px;
+    min-height: 130px;
+    margin-top: -130px;
+    z-index: 5;
+    display: flex;
+    position: relative;
+    align-items: center;
+    // text-align: center;
+
+    @include mq(sm) {
+        @include trans;
+
+        position: absolute;
+        min-height: auto;
+        top: auto;
+        bottom: 0;
+        width: 50%;
+        min-height: auto;
+        margin-top: auto;
+
+        &.-open {
+            transform: translateX(67%);
+        }
+    }
+
+    h1 {
+        margin: 0;
+        padding:0;
+        font-size: $fontSizeMobile;
+        font-weight: 700;
+
+        @include mq(sm) {
+            font-size: $fontSizeDesktop;
         }
     }
 }

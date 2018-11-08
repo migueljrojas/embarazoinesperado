@@ -1,0 +1,22 @@
+mixin hero(title, mainImage, altImage)
+    section.hero.js-hero
+        .hero__image
+            img(src=mainImage)
+        .hero__title.js-title
+            h1=title
+        .hero__content
+            .hero__contact
+                .hero__contact__text 
+                    h2 podemos ayudarte
+                .hero__contact__container
+                    .hero__contact__icon
+                        i.fa.fa-whatsapp
+                    .hero__contact__info
+                        p.hero__contact__info__text
+                            | contactanos
+                            strong consulta gratuita
+                        p.hero__contact__info__number 
+                            | +54911
+                            strong  5802 1696
+            .hero__video
+                img(src=altImage)

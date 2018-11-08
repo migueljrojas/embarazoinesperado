@@ -1,0 +1,42 @@
+extends ../_layouts/base
+
+include ../_modules/slider/slider
+include ../_modules/form/form
+include ../_modules/contacto/contacto
+include ../_modules/hero/hero
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.asesoria-profesional
+        +hero('asesoria profesional', '/images/asesoria.jpg', '/images/asesoria1.jpg')
+                                
+        section.asesoria-profesional__content
+            .asesoria-profesional__content__col
+                .asesoria-profesional__content__especialistas
+                        h2.asesoria-profesional__content__especialistas__title nuestros especialistas
+                        p.asesoria-profesional__content__especialistas__comment contamos con una gran variedad de especialistas dispuestos a ayudarte
+                        ul.asesoria-profesional__content__especialistas__list
+                            each item in site.data.especialistas
+                                li=item.speciality
+
+            .asesoria-profesional__content__col
+                +slider('asesoria-profesional__content__slider')
+                    each item in site.data.especialistas
+                        .asesoria-profesional__content__slide
+                            img(src='https://picsum.photos/1280/700')
+                            .asesoria-profesional__content__slide__details
+                                .asesoria-profesional__content__slide__details__container
+                                    span.asesoria-profesional__content__slide__name= item.name
+                                    span.asesoria-profesional__content__slide__speciality= item.speciality
+                        
+            .asesoria-profesional__content__col
+                    .asesoria-profesional__content__asesoramiento
+                        img.asesoria-profesional__content__asesoramiento__image(src='/images/asesoria2.jpg')
+                        h2.asesoria-profesional__content__asesoramiento__title Cuenta con Nosotros
+                        p.asesoria-profesional__content__asesoramiento__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor iont incididunt ut labore et dolore magna aliqua.
+                        button.asesoria-profesional__content__asesoramiento__request solicitar asesoramiento
+
+        +contacto

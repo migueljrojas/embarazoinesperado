@@ -1,0 +1,299 @@
+.novedades {
+    &__content {
+        &__main-note {
+            @include mq(sm) {
+                @include padd(both, half);
+
+                display: flex;
+            }
+
+            &__col {
+                position: relative;
+
+                &--image {
+                    height: 100vw;
+
+                    @include mq(sm) {
+                        width: 66.66%;
+                        height: 30vw;
+                    }
+                }
+
+                &--content {
+                    background: $darkestGray;
+
+                    @include mq(sm) {
+                        width: 33.34%;
+                    }
+                }
+            }
+
+            &__image {
+                @include img($imgheight: 100%, $imgwidth: 100%);
+
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: auto;
+                padding-bottom: 0;
+            }
+
+            &__data {
+                padding: 10%;
+            }
+
+            &__title {
+                @include title($color: $pink, $background: $white);
+                margin: 0;
+
+                @include mq(sm) {
+                    font-size: 2vw;
+                }
+            }
+
+            &__date {
+                display: block;
+                color: $white;
+                padding: 2% 0 4% 0;
+
+                @include mq(sm) {
+                    font-size: 1.2vw;
+                }
+            }
+
+            &__summary {
+                color: $midGray;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
+            }
+
+            &__more {
+                color: $pink;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+
+    &__notes {
+        @include mq(sm) {
+            display: flex;
+        }
+
+        &__container {
+            @include mq(sm) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+
+            &__note {
+                @include mq(sm) {
+                    width: calc(33.33% - 30px);
+                    padding: 15px 0;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+                }
+
+                &__image {
+                    @include img($imgwidth: 100%, $imgheight: 100%);
+                }
+
+                &__info {
+                    padding: 5%;
+                    background: $lightestGray;
+                }
+
+                &__title {
+                    @include title($background: $pink);
+
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    color: $darkestGray;
+
+                    @include mq(sm) {
+                        font-size: 1.7vw;
+                    }
+
+                    &:after {
+                        left: auto;
+                        justify-content: center;
+                    }
+                }
+
+                &__date {
+                    display: flex;
+                    justify-content: center;
+                    padding: 3% 0 2% 0;
+
+                    @include mq(sm) {
+                        font-size: 1.2vw;
+                    }
+                }
+
+                &__summary {
+                    border-top: 1px solid $lightGray;
+                    margin: 0;
+                    color: $midGray;
+                    padding-top: 2%;
+
+                    @include mq(sm) {
+                        font-size: 1.5vw;
+                    }
+                }
+
+                &__more {
+                    color: $pink;
+
+                    @include mq(sm) {
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        }
+    }
+
+    &__newsletter {
+        @include mq(sm) {
+            display: flex;
+        }
+
+        &__col {
+            &--form {
+                @include uiform;
+
+                background: $pink;
+                padding-bottom: 50px;
+
+                @include mq(sm) {
+                    width: 33.34%;
+                    padding-bottom: 0;
+                }
+            }
+
+            &--short-note {
+                @include mq(sm) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    width: 66.66%;
+                }
+            }
+        }
+
+        &__content {
+            padding: 0 10%;
+
+            &__title {
+                @include padd(top, half);
+
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                color: $white;
+                text-transform: uppercase;
+
+                @include mq(sm) {
+                    @include padd(top);
+
+                    font-size: 2vw;
+                }
+            }
+
+            &__text {
+                @include padd(both,half);
+
+                color: $white;
+                margin: 0;
+
+                @include mq(sm) {
+                    @include padd;
+
+                    font-size: 1.5vw;
+                }
+            }
+
+            &__form {
+                @include uiform($placeholderColor: $white, $borderColor: $white);
+            }
+        }
+
+        &__short-note {
+            padding-top: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
+            border-bottom: 1px solid $midGray;
+
+            @include mq(sm) {
+                width: calc(50% - 60px);
+                padding-top: 15px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            &:nth-child(9) {
+                @include mq(sm) {
+                    border-bottom: none;
+                }
+            }
+
+            &:nth-child(10) {
+                border-bottom: none;
+            }
+
+            &__title {
+                @include title($background: $pink);
+
+                margin: 0;
+                display: flex;
+                text-transform: uppercase;
+                color: $darkestGray;
+                padding-top: 3%;
+
+                @include mq(sm) {
+                    font-size: 1.7vw;
+                }
+            }
+
+            &__date {
+                display: flex;
+                background: $lightestGray;
+                font-size: 12px;
+                padding-left: 4%;
+
+                 @include mq(sm) {
+                     font-size: 1.2vw;
+                 }
+            }
+
+            &__summary {
+                margin: 0;
+                color: $midGray;
+                padding-top: 2%;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
+            }
+
+            &__more {
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 5%;
+
+                @include mq(sm) {
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+}

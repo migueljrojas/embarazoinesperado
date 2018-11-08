@@ -1,0 +1,28 @@
+extends ../_layouts/base
+
+include ../_modules/form/form
+include ../_modules/contacto/contacto
+include ../_modules/hero/hero
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.centros
+        +hero('red nacional de centros', '/images/red.jpg', '/images/red1.jpg')
+
+    section.centros__content
+        .centros__content__col.centros__content__col--list
+            button.centros__content__button Selecciona tu Centro
+            .centros__content__centro-container
+                each item in site.data.centros
+                    .centros__content__centro-data
+                        .centros__content__center=item.centro
+                        .centros__content__address=item.address
+                        .centros__content__location=item.location 
+        
+        .centros__content__col.centros__content__col--map
+            .centros__content__map-container
+                iframe.embed-responsive-item.-location-map(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3257731742233!2d-58.45196358530883!3d-34.545306180474704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43ae6018ddf%3A0x3d7f60a75bfa308a!2sEstadio+Monumental+Antonio+Vespucio+Liberti!5e0!3m2!1ses-419!2sar!4v1541084585328')
+    +contacto
